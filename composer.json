@@ -5,7 +5,7 @@
     "description": "A very simple shopping list application",
     "autoload": {
         "psr-4": {
-            "ShopBundle\\": "src/ShopListBundle"
+            "ShoppingListBundle\\": "src/ShoppingListBundle"
         },
         "classmap": [ "app/AppKernel.php", "app/AppCache.php" ]
     },
