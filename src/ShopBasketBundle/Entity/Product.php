@@ -15,6 +15,8 @@ use ShopBasketBundle\Exception\ElementNotFoundException;
  */
 class Product
 {
+    //TODO RATTACHES A 1 CATEGORIE
+    
     /**
      * @ORM\Column(type="integer")
      * @ORM\Id

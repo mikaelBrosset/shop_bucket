@@ -1,11 +1,11 @@
 {
-    "name": "shop_basket",
+    "name": "shopping_list",
     "license": "MIT",
     "type": "project",
-    "description": "A very simple shopping basket",
+    "description": "A very simple shopping list application",
     "autoload": {
         "psr-4": {
-            "ShopBundle\\": "src/ShopBundle"
+            "ShopBundle\\": "src/ShopListBundle"
         },
         "classmap": [ "app/AppKernel.php", "app/AppCache.php" ]
     },
