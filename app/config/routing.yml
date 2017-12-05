@@ -1,3 +1,4 @@
-app:
-    resource: '@AppBundle/Controller/'
+shoppinglist:
+    resource: '@ShoppingListBundle/Controller/'
     type: annotation
+    prefix: /list
