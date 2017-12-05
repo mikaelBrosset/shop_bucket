@@ -28,16 +28,10 @@ class Product
     private $name;
 
     /**
-     * Many Products have one Category
      * @ORM\ManyToOne(targetEntity="Category", inversedBy="products")
      * @ORM\JoinColumn(name="category_id", referencedColumnName="id")
      */
-    private $categories;
-
-    public function __construct()
-    {
-        $this->categories = new ArrayCollection();
-    }
+    private $category;
 
     public function setId($id)
     {
@@ -52,7 +46,7 @@ class Product
 
     public function setName($name)
     {
-        $this->name = $name;
+        $this->name = htmlentities(ucfirst(trim($name)));
         return $this;
     }
 
@@ -61,30 +55,14 @@ class Product
         return $this->name;
     }
 
-    public function getCategories()
+    public function getCategory()
     {
-        return $this->categories->toArray();
+        return $this->category;
     }
 
-    public function addCategory(Category $cat)
+    public function setCategory($cat)
     {
-        if (!$this->categories->contains($cat)) {
-            $this->categories->add($cat);
-        }
+        $this->category = $cat;
         return $this;
-    }
-
-    public function removeCategory(Category $cat)
-    {
-        if ($this->categories->contains($cat)) {
-            $this->categories->removeElement($cat);
-        } else {
-            throw new ElementNotFoundException(__CLASS__, $cat->getName());
-        }
-    }
-
-    public function hasCategory(Category $cat)
-    {
-        return $this->categories->contains($cat) ? true : false;
     }
 }

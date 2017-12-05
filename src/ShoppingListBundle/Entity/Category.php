@@ -28,8 +28,7 @@ class Category
     private $name;
 
     /**
-     * One Category has Many Products
-     * @ORM\OneToMany(targetEntity="Product", mappedBy="categories")
+     * @ORM\OneToMany(targetEntity="Product", mappedBy="category")
      */
     private $products;
 
@@ -51,7 +50,7 @@ class Category
 
     public function setName($name)
     {
-        $this->name = $name;
+        $this->name = ucfirst($name);
         return $this;
     }
 
