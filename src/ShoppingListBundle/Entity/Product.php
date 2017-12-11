@@ -11,7 +11,7 @@ use Doctrine\ORM\Mapping as ORM;
 use ShoppingListBundle\Exception\ElementNotFoundException;
 
 /**
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="ShoppingListBundle\Repository\ProductRepository")
  */
 class Product
 {
