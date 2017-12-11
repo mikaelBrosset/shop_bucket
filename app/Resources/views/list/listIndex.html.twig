@@ -1,0 +1,39 @@
+{% extends 'list/main.html.twig' %}
+
+{% block content%}
+
+<div class="rightBlock inlineBlock">
+    <a href="{{ path('add_product') }}">
+        <button type="button" class="btn btn-info">Ajouter un Produit au magasin</button>
+    </a>
+    <br>
+    <label for="filterToShow">Filter les produits disponibles</label><br>
+
+    <select class="filterToShow" id="filterToShowAvailable" name="filterToShow">
+        <option value="tous">Tous</option>
+
+    </select>
+
+
+        <div class="productListBlock">
+            <div class="productListBlockHead">
+                <div class="productListBlockHead_text">Produits disponibles</div>
+            </div>
+            <div class="productListBlockProducts"></div>
+        </div>
+</div>
+<div class="rightBlock inlineBlock">
+    <label for="filterToShow">Filter les produits dans le panier</label><br>
+
+    <select class="filterToShow" id="filterToShowBasket" name="filterToShow">
+        <option value="tous">Tous</option>
+
+    </select>
+    <div class="myListBlock">
+        <div class="myListBlockHeader">Ma liste</div>
+        <div class="productBasketBlockProducts"></div>
+    </div>
+</div>
+
+
+{% endblock %}
